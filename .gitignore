@@ -1,0 +1,7 @@
+/**/*.history
+/**/*.json
+/**/*.out
+/**/*.asc
+/**/*.bin
+/**/*.dblite
+/**/*.vcd
