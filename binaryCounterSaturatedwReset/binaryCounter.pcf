@@ -1,0 +1,26 @@
+# -----------------------------------------------------------------------------
+#- Binary counter example for the iCE40-HX8K board
+#- Constraint file (.pcf)
+#- By Jason Kaufmann
+#- October 2022
+#- GPL license
+# -----------------------------------------------------------------------------
+# --  Pinout:
+# --  Guide:
+
+# ------------ User Leds ------------------------------------------------------
+set_io  leds[0]  C3
+set_io  leds[1]  B3
+set_io  leds[2]  C4
+set_io  leds[3]  C5
+set_io  leds[4]  A1
+set_io  leds[5]  A2
+set_io  leds[6]  B4
+set_io  leds[7]  B5
+
+# reset signal if it gets saturated
+
+set_io rst D4
+
+# 12MHz clock input
+set_io clk J3

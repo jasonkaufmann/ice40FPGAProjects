@@ -1,0 +1,41 @@
+$date
+	Thu Oct 20 17:03:55 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module srLatch_tb $end
+$var wire 1 ! qNot $end
+$var wire 1 " q $end
+$var reg 1 # a $end
+$var reg 1 $ b $end
+$scope module testLatch $end
+$var wire 1 $ reset $end
+$var wire 1 # set $end
+$var reg 1 " q $end
+$var reg 1 ! qNot $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0$
+0#
+x"
+x!
+$end
+#200000
+0!
+1"
+1#
+#400000
+1!
+0"
+1$
+0#
+#600000
+0$
+#1000000
