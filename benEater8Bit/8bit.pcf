@@ -3,6 +3,12 @@
 # 12MHz clock input
 set_io fastClk J3
 
+set_io rst B16
+
+set_io pushButttonClock C16
+
+set_io clockChooser D16
+
 # data bus
 set_io  dataBus[0]  C3
 set_io  dataBus[1]  B3
