@@ -11,7 +11,6 @@ always @ (posedge clk) begin
     if (rst == 1) begin
         dataOut = 0;
     end
-
     if (load == 1) begin
         dataOut = data;
     end
