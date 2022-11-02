@@ -1,28 +1,22 @@
 module programCounter (
     input clk,
-    input outputEnable,
     input jump,
     input countEnable,
     input [3:0] jumpAddr,
 
-    output reg [3:0] addr
+    output reg [3:0] addr = 0
 );
 
 reg [3:0] countHold; //internal count register
 
 always @ (posedge clk) begin
     if(countEnable == 1'b1) begin
-        countHold <= countHold + 1;
+        addr = addr + 1;
     end
 
     if (jump == 1'b1) begin
-        countHold <= jumpAddr;
+        addr = jumpAddr;
     end
-    
-    if (outputEnable == 1'b1) begin
-        addr <= countHold;
-    end
-    
 end
 
 endmodule

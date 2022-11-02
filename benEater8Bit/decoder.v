@@ -2,6 +2,7 @@ module decoder (
     //INPUTS
     input wire [7:0] insn,
     input clk,
+    input rst,
 
     //OUTPUTS
     output reg hlt,
@@ -20,16 +21,22 @@ module decoder (
     output reg co,
     output reg j );
 
-reg [2:0] microClk;
+reg [2:0] microClk = 0;
 wire [3:0] opcode = insn[7:4]; //grab the opcode
 
 /* make a microcode clock that counts from
 0 to 5 and then resets to know which microcode instruction
 we're on */
-always @(negedge clk) begin
+always @(negedge clk or posedge rst) begin
+
     microClk = microClk + 1;
+
+    if(rst == 1'b1) begin
+        microClk = 0;
+    end
+
     if (microClk == 3'b101) begin
-        microClk <= 3'b000;
+        microClk = 3'b000;
     end
 
     {hlt, mi, ri, ro, io, ii, ai, ao, sumo, sub, bi, oi, ce, co} = 1'b0;
@@ -51,6 +58,9 @@ always @(negedge clk) begin
                 end
                 4'b1110: begin
                     ao = 1; oi = 1;
+                end
+                4'b1111: begin
+                    hlt = 1;
                 end
             endcase
         end

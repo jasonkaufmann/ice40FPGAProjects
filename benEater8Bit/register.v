@@ -4,22 +4,16 @@ module register #(parameter n = 8) (
     input clk,
     input [n-1:0] data,
     input load,
-    input outputEnable,
     input rst,
-    output reg [n-1:0] dataHold,
     output reg [n-1:0] dataOut);
 
-always @ (posedge clk or posedge rst) begin
+always @ (posedge clk) begin
     if (rst == 1) begin
-        dataHold <= 0;
+        dataOut = 0;
     end
 
     if (load == 1) begin
-        dataHold <= data;
-    end
-
-    if(outputEnable == 1) begin 
-        dataOut <= dataHold;
+        dataOut = data;
     end
 end
 endmodule

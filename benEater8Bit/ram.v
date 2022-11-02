@@ -1,13 +1,12 @@
 module ram #(
 
     // Parameters
-    parameter   INIT_FILE = ""
+    parameter   INIT_FILE = "mem_init.txt"
     
 ) (
      // Inputs
     input               clk,
     input               w_en,
-    input               r_en,
     input       [3:0]   address,
     input       [7:0]   w_data,
     
@@ -17,13 +16,12 @@ module ram #(
     // Declare memory
     reg [7:0]  mem [0:15];
     
-    always @ (posedge clk) begin
-        if(r_en == 1'b1) begin
-            r_data <= mem[address];
-        end 
+    always @ (*) begin
+
+        r_data = mem[address];
         
         if (w_en == 1'b1) begin
-            mem[address] <= w_data;
+            mem[address] = w_data;
         end
     end
 

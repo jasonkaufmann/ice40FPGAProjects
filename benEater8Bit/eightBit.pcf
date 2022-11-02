@@ -1,0 +1,20 @@
+#This is the pin constraints file for the 8bit computer
+
+# 12MHz clock input
+set_io fastClk J3
+
+set_io rst B16
+
+set_io pushButttonClock C16
+
+set_io clockChooser D16
+
+# data bus
+#set_io  dataBus[0]  C3
+#set_io  dataBus[1]  B3
+#set_io  dataBus[2]  C4
+#set_io  dataBus[3]  C5
+#set_io  dataBus[4]  A1
+#set_io  dataBus[5]  A2
+#set_io  dataBus[6]  B4
+#set_io  dataBus[7]  B5
