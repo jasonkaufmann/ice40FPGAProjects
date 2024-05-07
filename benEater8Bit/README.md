@@ -8,3 +8,5 @@ on
 <p align="center">
 <img src="https://user-images.githubusercontent.com/41923667/200207019-058e51d4-db84-4428-9c96-3a2f6536caec.png"/>
 </p>
+![image](https://github.com/jasonkaufmann/ice40FPGAProjects/assets/41923667/55ae60f3-c890-4d08-b9b3-754b753de8b8)
+
